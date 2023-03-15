@@ -9,7 +9,7 @@ app.set("views", "./public");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Ajaycool13",
+  password: "",
   database: "sys",
 });
 
