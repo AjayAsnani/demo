@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display Blob Images</title>
+  </head>
+  <body>
+    <div id="images"></div>
+    <script>
+      fetch("http://localhost:3000")
+        .then((response) => response.json())
+        .then((images) => {
+          const imagesDiv = document.getElementById("images");
+
+          images.forEach((image) => {
+            const img = document.createElement("img");
+            img.src = `data:image/jpg;base64,${image.image}`;
+
+            img.alt = image.name;
+
+            imagesDiv.appendChild(img);
+          });
+        });
+    </script>
+    <img src="data:image/jpg;base64,{base64-encoded-image-data}" />
+  </body>
+</html>
